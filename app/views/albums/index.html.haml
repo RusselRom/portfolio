@@ -1,0 +1,23 @@
+%h1
+  Portfolio
+.row
+  .col-lg-12
+    %h1.page-header
+      Проведение праздников
+      %small Showcase Your Work One Column at a Time
+- @albums.each do |album|
+  .row
+    .col-lg-7.col-md-7
+      %a{href: "#"}
+        %img.img-responsive{src: album.photos.first.image(:medium)}/
+    .col-lg-5.col-md-5
+      %h3
+        = album.name
+      %p
+        = album.description
+      %a.btn.btn-primary{href: "#"}
+        Смотреть
+        %span.glyphicon.glyphicon-chevron-right
+  %hr/
+
+
