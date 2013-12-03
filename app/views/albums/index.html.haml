@@ -8,14 +8,15 @@
 - @albums.each do |album|
   .row
     .col-lg-7.col-md-7
-      %a{href: "#"}
-        %img.img-responsive{src: album.photos.first.image(:medium)}/
+      %a{href: album_path(:id => album.id)}
+        - if album.photos.first
+          %img.img-responsive{src: album.photos.first.image(:medium)}/
     .col-lg-5.col-md-5
       %h3
         = album.name
       %p
         = album.description
-      %a.btn.btn-primary{href: "#"}
+      %a.btn.btn-primary{href: album_path(:id => album.id)}
         Смотреть
         %span.glyphicon.glyphicon-chevron-right
   %hr/

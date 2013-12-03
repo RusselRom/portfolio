@@ -1,0 +1,22 @@
+!!!
+%html{lang: "en", "ng-app" => "Manage"}
+  %head
+    %meta{charset: "utf-8"}/
+    %title Manage
+  %body
+    %ul.menu
+      %li
+        %a{href: "#/albums"} Manage Albums
+      %li
+        %a{href: "#/photos"} Manage Photos
+    %div{"ng-view" => ""}
+    %div
+      Angular seed app: v
+      %span{"app-version" => ""}
+    %script{src: "/assets/lib/angular/angular.js"}
+    %script{src: "/assets/lib/angular/angular-route.js"}
+    %script{src: "/assets/manage/app.js"}
+    %script{src: "/assets/manage/services.js"}
+    %script{src: "/assets/manage/controllers.js"}
+    %script{src: "/assets/manage/filters.js"}
+    %script{src: "/assets/manage/directives.js"}

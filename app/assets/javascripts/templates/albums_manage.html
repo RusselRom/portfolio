@@ -1,0 +1,29 @@
+<h1>Albums Manage</h1>
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Close</th>
+        <th>Edit</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="album in albumList" click-to-edit="album.id">
+            <td>{{album.id}}</td>
+            <td>
+                <p ng-hide="view.editorEnabled">{{album.name}}</p>
+                <input value={{album.name}} ng-show="view.editorEnabled">
+            </td>
+            <td>
+                <p ng-hide="view.editorEnabled">{{album.description}}</p>
+                <input value={{album.description}} ng-show="view.editorEnabled">
+            </td>
+            <td style="cursor:pointer" ng-click="remove($index, album.id)">X</td>
+            <td>
+                <a style="cursor:pointer" ng-click="enableEditor()" ng-hide="view.editorEnabled">E</a>
+                <a style="cursor:pointer" ng-show="view.editorEnabled">Save</a>
+                <a style="cursor:pointer" ng-click="disableEditor()" ng-show="view.editorEnabled">Cancel</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

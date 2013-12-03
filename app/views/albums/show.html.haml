@@ -1,0 +1,10 @@
+%h1
+  Album
+
+- @photos.in_groups_of(4) do |array_photos|
+  %br
+  .row
+    - array_photos.each do |photo|
+      - if photo
+        .span3
+          %img.img-responsive{src: photo.image(:medium)}/
